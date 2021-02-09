@@ -12,7 +12,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0
 using Microsoft.AspNetCore.SignalR.Protocol;
 #endif
 
@@ -66,7 +66,7 @@ namespace Microsoft.Azure.WebJobs.Extensions.SignalRService
             {
                 services.AddSingleton(router);
             }
-#if NETCOREAPP3_1
+#if NETCOREAPP3_0
             var jsonProtocols = services.Where(s => s.ServiceType == typeof(IHubProtocol) && s.ImplementationType == typeof(JsonHubProtocol)).ToArray();
             foreach (var protocol in jsonProtocols)
             {

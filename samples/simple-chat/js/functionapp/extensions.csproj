@@ -1,17 +1,11 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-<TargetFrameworks>netcoreapp2.2;netcoreapp3.1</TargetFrameworks>
-    <WarningsAsErrors></WarningsAsErrors>
-    <DefaultItemExcludes>**</DefaultItemExcludes>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<WarningsAsErrors></WarningsAsErrors>
+	<DefaultItemExcludes>**</DefaultItemExcludes>
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\..\..\src\SignalRServiceExtension\Microsoft.Azure.WebJobs.Extensions.SignalRService.csproj" />
-</ItemGroup>
-<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-<PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.2.1" />
-</ItemGroup>
-
-<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp2.2'">
     <PackageReference Include="Microsoft.Azure.WebJobs.Script.ExtensionsMetadataGenerator" Version="1.0.0" />
   </ItemGroup>
 </Project>
